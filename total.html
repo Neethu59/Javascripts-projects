@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label>Customer Name<input type="text"></label></div><br><br>
+     <div>  <label>Mobile Number<input type="text"></label> </div><br><br>
+     
+    <tr><td>    <label>Book Catogory</label></td><td ><input type="radio"name="book"value="science"id="re">science</td><td><input type="radio"name="book"value="comic"id="ra">comic</td></tr>
+        
+     <div><label>No of Books Required<input type="range"name="bookcount"id="bookval" min="0"max="500"value="1"oninput="markoutputid.value=bookval.value">
+    <output name="markoutputname"id="markoutputid"></output>
+    </label> </div><br><br>
+     <button onclick="total()">calculate total prise</button>
+     <input type="reset"value="Reset">
+     <br><br><br><br>
+     <p id="dis"></p>
+     <h4>discound rate chart</h4>
+     <table border="5">
+        <tr>
+            <th>Book type</th>
+            <th>Per Book Cost</th>
+            <th>Discount Rate(in persentage)</th>
+        </tr>
+        <tr>
+            <td id=>science</td>
+            <td>400</td>
+            <td>5% if total book count <=250</td>
+        </tr>
+        <tr>
+            <td id=>science</td>
+            <td>400</td>
+            <td>7% if total book count>250</td>
+        </tr>
+        <tr>
+            <td>comic</td>
+            <td>300</td>
+            <td>3% if total book count<=250</td>
+        </tr>
+        <tr>
+            <td>comic</td>
+            <td>300</td>
+            <td>4% if total book count>250</td>
+        </tr>
+        
+     </table>
+     <script>
+
+        function total()
+        {
+var range=document.getElementById("markoutputid").value;
+console.log(range);
+
+const radios = document.getElementsByName('book');
+
+for (var i = 0; i <  radios.length; i++) {
+  if (radios[i].checked) {
+    console.log(radios[i].value);
+ var   sub=radios[i].value;
+    
+  }
+
+
+
+var d;
+d=400* (range);
+console.log(d);
+var e;
+e=300* (range);
+console.log(e);
+
+if(sub=="science"&&range<=250)
+{
+    var discound1=(d-(d*0.5));
+    console.log(discound1);
+    document.getElementById("dis").innerHTML="book type:science"+ "discound1="+discound1;
+    
+}
+else if(sub=="science"&&range>=250)
+{
+
+    discound2=(d-(d*0.7));
+    console.log(discound2)
+    document.getElementById("dis").innerHTML="book type:science"+"discound2="+discound2;
+}
+
+else if(sub=="comic"&&range<=250)
+{
+  var discound3=(e-(e*0.3));
+  console.log(discound3)
+  document.getElementById("dis").innerHTML="book type:comic"+"discound3="+discound3;
+}
+else
+{
+    discound4=(e-(e*0.4));
+    console.log(discound4)
+    document.getElementById("dis").innerHTML="book type:comic"+"discound4="+discound4;
+}
+
+   }   }
+     </script>
+</body>
+</html>

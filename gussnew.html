@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Guess The Number</h1>
+  
+<p>We have selected a random number between 1 - 100. 
+See if you can guess it.</p>
+  
+<div class="form">
+    <label for="guessField">Enter a guess: </label>
+    <input type = "text" id = "guessField" class = "guessField">
+    <button onclick="submit()">submit</button> 
+    <p id="input"></p>    
+</div>
+    <script type = "text/javascript">
+  
+        
+        var y = Math.floor(Math.random() * 100);
+          var i=0
+         function submit()
+         {
+            i++
+            if(i<=5){
+       var x = document.getElementById("guessField").value;
+       
+       
+       if(x < y)
+       {    
+        document.getElementById("input").innerHTML="try a greater number"
+        
+       }
+       else if(x > y) 
+                       
+       {    
+        document.getElementById("input").innerHTML="try a smaller number"  
+           
+        
+       }
+       
+       else 
+       {
+        document.getElementById("input").innerHTML="CONGRATULATIONS!!! YOU GUESSED IT RIGHT IN "
+                   + i + " GUESS " 
+          
+       }
+    }
+    else{
+       document.getElementById("input").innerHTML="your limit is over"
+    }
+    }
+
+    </script>
+</body>
+</html>

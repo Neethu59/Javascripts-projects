@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+ 
+<body style="text-align: center;">
+    <!-- <h1 style="color: green">
+        GeeksforGeeks -->
+    </h1>
+ 
+     
+
+ 
+ 
+ 
+    <textarea id="word" oninput="countWord()"
+        rows="10" cols="60">
+    </textarea>
+    <br><br>
+ 
+     
+<p> Word Count:
+        <span id="show">0</span>
+    </p>
+ <p>charector cound:
+    <span id="total">0</span>
+ </p>
+ 
+ 
+    <script>
+        function countWord() {
+            var chare=0;
+ var chare =document.getElementById("word").value.length;
+            // Get the input text value
+            var words = document.getElementById("word").value;
+            
+            document.getElementById("total").innerHTML=chare;
+            // Initialize the word counter
+            var count = 0;
+ 
+            // Split the words on each
+            // space character
+            var split = words.split(' ');
+ 
+            // Loop through the words and
+            // increase the counter when
+            // each split word is not empty
+            for (var i = 0; i < split.length; i++) {
+                if (split[i] != "") {
+                    count += 1;
+                }
+            }
+ 
+            // Display it as output
+            document.getElementById("show").innerHTML = count;
+        }
+        // function countWord()
+        // {
+        //     var total=document.getElementById("word").value;
+            // total=total.replace('/\s/',g,'');
+        //     document.getElementById("total").innerHTML=total-length;
+        // }
+    </script>
+</body>
+ 
+</html>

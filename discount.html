@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  body{
+    background-color: aqua;
+  }
+  table{
+                margin-left: 35%;
+                border-style: solid 5px;
+                border-width: 30%;
+     }
+      tr,td{
+      padding: 10px;
+      border-style: solid;
+      border-width: 2px;
+            }
+    div{
+     text-align: center; 
+    }
+    h2
+    {
+      color: red;
+    }
+    h5{
+      color: blue;
+    }
+    button
+    {
+      background-color: brown;
+      color: white;
+    }
+
+</style>
+<body> 
+  <form>
+  <table border="10">
+    <tr><td>    
+  <label>prodect name </td><td><input type="text"></label></td></tr><br>
+  <tr><td>   <label>price</td><td><input type="text" id="price"></label>  <br></td></tr>
+       <tr><td>   <label>sale</label></td>
+         <td>  <select name="season" id="disc">
+             <option value="summer">summer  </option>
+             <option value="onam">onam </option>
+             <option value="newyear">newyear</option>
+           </select><br><br></td></tr>
+  </table></form>
+<br><br>
+          <div>
+            <button onclick="dis()" >discound </discound>
+          </div>
+          <div>
+            <h2 id="result">discound</h2>
+          </div>
+          <div>
+            <h5 id="d1">price</h5>
+          </div> 
+        
+          <script>
+           
+function dis()
+{
+  var p=document.getElementById("price").value;
+            
+            var d=document.getElementById("disc").value;
+   var di;         
+if(d=="summer")
+{
+  di=(p-(p*0.1));
+  document.getElementById("d1").innerHTML="The discound is 10%";
+  
+}
+else if(d=="onam")
+{
+di=(p-(p*0.2));
+document.getElementById("d1").innerHTML="The discound is 20%";
+
+}
+else if(d=="newyear")
+{
+  di=(p-(p*0.3));
+  document.getElementById("d1").innerHTML="The discound is 30%";
+}
+else
+{
+  document.getElementById("d1").innerHTML="no discound";
+}
+document.getElementById("result").innerHTML="The discound prise is:"+di;
+}
+</script>
+        
+</body>
+ </html>

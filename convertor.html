@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: black;
+       color: white;
+    }
+    #h1{
+        color: white;
+        text-align: center;
+        font-size: xx-large;
+    }
+    label
+    {
+        color: white;
+        font-weight: bold;
+        width: 100px;
+        margin-left: 40%;
+        height: 40%;
+        margin-top:15%;
+        padding-bottom: 12%;
+    }
+    button
+    {
+background-color:red;
+color: white;
+margin-left: 40%;
+margin-top: 20%;
+padding:  3%;
+font-size: x-large;
+    }
+
+    #input
+    {
+        color: white;
+        padding: 30%;
+        margin-bottom: 60%;
+    }
+    
+        
+        
+
+    
+</style>
+<body>
+    <p id="h1">Hight converter</p>
+    <div class ="container">
+        <!-- <div class="row"> -->
+            <!-- <div class="col-sm-4"> -->
+  <label> <span>feet </span> <input type="number" id="feet"></label> </div></div>
+  </div><br><br>
+  <div class="container">
+  <label><span>inches</span><input type="number" id="inches"></label></div>
+    <br><br>
+ <button  onclick="con()" >convert to cm</button>
+<p id="input"></p>
+ <script>
+    function con()
+    {
+var feet=document.getElementById("feet").value;
+var inches=document.getElementById("inches").value;
+console.log(feet)
+console.log(inches)
+if(feet==""||inches=="")
+{
+    console.log("pls enter feet value")
+    document.getElementById("input").innerHTML="please enter feet value"
+}
+else if(inches<0||inches>12)
+{
+    console.log("pls enter inch value between 0-12")
+    document.getElementById("input").innerHTML="pls enter inch value between 0-12"
+}
+else{
+    var totalinches=(feet*12)+inches;
+    document.getElementById("feet").value=''
+    document.getElementById("inches").value=''
+    document.getElementById("input").innerHTML="your number is:"+totalinches+"cm"
+}
+        
+    }
+ </script>
+</body>
+</html>
